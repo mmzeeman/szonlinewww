@@ -1,0 +1,57 @@
+[
+   {enabled, true},
+   {host, szonlinewww},
+
+   {hostname, "sz-online.nl"},
+   {hostalias, ["www.sz-online.nl"]},
+
+   {dbhost, "127.0.0.1"},
+   {dbport, 5432},
+   {dbuser, "szeeman"},
+   {dbpassword, "szeeman"},
+   {dbdatabase, "szonline"},
+   {dbschema, "public"},
+    
+   {redirect, true},
+
+   {admin_password, "Dyslexie-1234"},
+
+   {sign_key_simple, <<"ksdfkuucvsdfau666">>},
+   {sign_key, <<"kfsdakafifdsudsfauadsidfsj2382373482k">>},
+
+   {title, <<"SZ Online">>},
+   {subtitle, <<"SZ Online">>},
+
+   {pagelen, 5},
+
+
+    {install_modules,[
+       mod_base,
+       mod_base_site,
+       mod_bootstrap,
+       mod_menu,
+       mod_search,
+       mod_translation,
+       mod_signal,
+       mod_logging,
+
+       mod_mqtt,
+
+       mod_acl_adminonly,
+
+       mod_authentication,
+       mod_editor_tinymce,
+
+       mod_admin,
+       mod_admin_category,
+       mod_admin_config,
+       mod_admin_identity,
+       mod_admin_modules,
+       mod_admin_predicate
+    ]}
+       
+
+
+    
+
+].

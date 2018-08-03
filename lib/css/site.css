@@ -1,0 +1,13 @@
+/* Placeholder CSS pfile. Override this one in your site. */
+
+.sz-online-logo {
+     background: url(/lib/images/sz-online-logo.png);
+}
+
+a.navbar-brand {
+    color: #b7b7a6 !important;
+}
+
+body {
+    background: #b7b7a6 !important;
+}
