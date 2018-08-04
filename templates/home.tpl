@@ -3,8 +3,8 @@
 {% block title %}{{ m.site.title }}{% endblock %}
 
 {% block navbar_brand %}
-    <span class="sz-online-logo"></span>
-    {{ m.config.site.title.value }}
+    <img src="/lib/images/sz-online-logo.png" />
+    <span>Home</span>
 {% endblock %}
 
 {% block main %}
