@@ -1,5 +1,18 @@
 /* Placeholder CSS pfile. Override this one in your site. */
 
+html { 
+    background: url(/lib/images/sz-online-background.png) no-repeat center center fixed; 
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-backgound-size: 100% 100%; /* early css3 implementation */
+    -webkit-background-size: cover;
+}
+
+body {
+    background-color: rgba(0,0,0,0.0);
+}
+
 .navbar-brand {
   padding: 0px; /* firefox bug fix */
 }
@@ -11,11 +24,8 @@
   display: inline;
 }
 
-a.navbar-brand {
+a {
     color: #b7b7a6 !important;
 }
 
 
-body {
-    background: #b7b7a6 !important;
-}
