@@ -13,6 +13,10 @@ body {
     background-color: rgba(0,0,0,0.0);
 }
 
+.navbar {
+    background-color: rgba(0,0,0,0.75);
+}
+
 .navbar-brand {
   padding: 0px; /* firefox bug fix */
 }
@@ -24,7 +28,7 @@ body {
   display: inline;
 }
 
-a {
+.navbar a {
     color: #b7b7a6 !important;
 }
 
