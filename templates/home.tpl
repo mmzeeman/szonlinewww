@@ -14,17 +14,21 @@
         {% include "_title.tpl" %}
     </div>
 </div>
-<div class="row">
-    <div id="subnavbar" class="col-lg-4 col-md-4">
-        {% include "_content_list.tpl" list=m.search[{query cat='product' sort='-rsc.modified' pagelen=5}] title=_"Products" %}
-    </div>
 
+<div class="row">
     <div class="main col-lg-8 col-md-8">
         <div class="page-header">
             <h1>{{ m.rsc.page_home.title }} <small>{{ m.rsc.page_home.summary }}</small>
         </div>
 
         {{ m.rsc.page_home.body | show_media }}
+
+        <div class="container">
+        <h3>{_ Products _}</h3>
+        {% for product in m.search[{query cat='product' sort='-rsc.modified' pagelen=5}] %}
+            {% include "_panel_item.tpl" id=product %}
+        {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}
