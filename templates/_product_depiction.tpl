@@ -8,14 +8,14 @@
             <img class="product" src="{% image_url dep mediaclass="base-page-main" %}" alt="{{ dep.id.title }}" />
         {% endif %}
         {% if dep.id.summary %}
-        <p class="caption"><span class="icon glyphicon glyphicon-camera"></span> {{ dep.id.summary }}</p>
+            <p class="caption"><span class="icon glyphicon glyphicon-camera"></span> {{ dep.id.summary }}</p>
         {% endif %}
     </div>
 {% else %}
     <div class="depiction landscape">
         <img class="product" src="{% image_url dep mediaclass="base-page-main" %}" alt="{{ dep.id.title }}" />
         {% if dep.id.summary %}
-        <p class="caption"><span class="icon glyphicon glyphicon-camera"></span> {{ dep.id.summary }}</p>
+            <p class="caption"><span class="icon glyphicon glyphicon-camera"></span> {{ dep.id.summary }}</p>
         {% endif %}
     </div>
 {% endif %}
