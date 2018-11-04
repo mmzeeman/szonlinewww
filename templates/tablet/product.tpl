@@ -8,3 +8,6 @@
         {% include "_price_and_stock_info.tpl" %}
     </p>
 {% endblock %}
+
+{% block thumbnails %}
+{% endblock %}
