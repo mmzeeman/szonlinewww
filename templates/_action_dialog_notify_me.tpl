@@ -1,4 +1,4 @@
-{% wire id=#notify_me type="submit" postback={notify_me product=id} delegate="szonlinewww" %}
+{% wire id=#notify_me type="submit" postback={notify_me product=product} delegate="szonlinewww" %}
 
 <form id="{{ #notify_me }}" class="form-horizontal"  action="postback">
 <div class="form-group">
