@@ -1,5 +1,12 @@
-{% wire id=#notify_me type="submit" postback={notify_me product=product} delegate="szonlinewww" %}
 
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-9">
+        <p>{_ Send us your email address. We will notify you when the product comes back in stock. _}</p>
+    </div>
+</div>
+
+{% wire id=#notify_me type="submit" postback={notify_me product=product} delegate="szonlinewww" %}
 <form id="{{ #notify_me }}" class="form-horizontal"  action="postback">
 <div class="form-group">
      <label for="name" class="col-sm-3 control-label">{_ Name _}</label>

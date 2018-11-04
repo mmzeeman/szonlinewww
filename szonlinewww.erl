@@ -16,25 +16,38 @@
 init(Context) ->
     z_datamodel:manage(?MODULE, datamodel(), Context).
 
+%%
+%% Orders
+%%
+
 event(#postback{message={order_now, Args}}, Context) ->
     z_render:dialog(?__("Order Now", Context), "_action_dialog_order_now.tpl", Args, Context);
 
 event(#submit{message={order_now, Args}}, Context) ->
-    z_render:wire([{dialog_close, []}], Context);
+    ProductId = proplists:get_value(product, Args),
+    Message = ["Product: ", z_dispatcher:abs_url(
+        z_dispatcher:url_for(page, [{id, ProductId}], Context), Context)],
+    send_render([{message, Message} | Args], Context),
+
+    GrowlMessage = ?__("Thank you for your order. You will receive a payment request withing 24 hours.", Context),
+    z_render:wire([{growl, [{text, GrowlMessage}, {stay, true}]}, {dialog_close, []}], Context);
+
+%%
+%% Notify Me
+%%
 
 event(#postback{message={notify_me, Args}}, Context) ->
     z_render:dialog(?__("Notify Me", Context), "_action_dialog_notify_me.tpl", Args, Context);
 
 event(#submit{message={notify_me, Args}}, Context) ->
     ProductId = proplists:get_value(product, Args),
-    
     Message = ["Product: ", z_dispatcher:abs_url(
         z_dispatcher:url_for(page, [{id, ProductId}], Context), Context)],
-
     send_render([{message, Message} | Args], Context),
 
-    Context1 = z_render:growl(?__("Thank you. You will be notified when the product is back in stock.", Context), Context),
-    z_render:wire([{dialog_close, []}], Context1).
+    GrowlMessage = ?__("Thank you. You will be notified when the product is back in stock.", Context),
+    z_render:wire([{growl, [{stay, true}, {text, GrowlMessage}]},
+                   {dialog_close, []}], Context).
 
 send_render(Args, Context) ->
     Template = proplists:get_value(email_template, Args, "email_contact.tpl"),
