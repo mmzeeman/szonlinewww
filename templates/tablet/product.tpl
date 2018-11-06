@@ -2,7 +2,7 @@
 {% inherit %}
 
 {% block depiction %}
-    {% include "_product_depiction.tpl" %} 
+    {% include "_page_depiction.tpl" %} 
     <p></p>
     <p class="lead">
         {% include "_price_and_stock_info.tpl" %}

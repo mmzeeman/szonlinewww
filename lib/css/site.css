@@ -23,8 +23,9 @@ body {
     color: #b7b7a6 !important;
 }
 
-img.product {
+img.depiction, img.product {
   filter:drop-shadow(5px 5px 8px gray);
+  padding-bottom: 8px;
 }
 
 .panel.panel-noborder {

@@ -1,13 +1,13 @@
 <p class="text-muted">
-        {% if forloop.first %}{_ By _}{% endif %}
-        <a href="{{ id.page_url }}">{{ id.title }}</a>{% if not forloop.last %}, {% else %} &ndash; {% endif %}
-    {% endfor %}
+    {#
+    <span class="label label-default">{{ id.category_id.title }}</span>
     {% all include "_meta_extra.tpl" %}
-    <span class="pull-right">
+    #}
+    <span>
         {% if id.is_editable %}
             <a class="btn btn-default btn-xs" href="{% url admin_edit_rsc id=id %}">{_ Edit _}</a>
         {% endif %}
         {% include "_meta_share.tpl" %}
     </span>
 </p>
-
+<hr />
